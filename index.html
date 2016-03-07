@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HIV Medication Guide</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="navigation">
+        </div>
+      </nav>
+      <div class="header">
+      </div>
+    </header>
+    <div class="container">
+      <div class="search-box">
+        <form class="search">
+          <label for="searchBox">
+            <h2>search by medication name:</h2><br/>
+            <input type="text" name="search"/>
+          </label>
+        </form>
+      </div>
+      <div class="filler">
+        - or -
+      </div>
+      <div class="med-categories">
+          <h2>select a medication category:</h2><br/>
+          <div class='medCat'>
+            <button type="button" name="NRTIs">Nucleoside Reverse Transcriptase Inhibitors</button>
+            <p>
+              Medication cat info here
+            </p>
+          </div>
+          <div class='medCat'>
+            <button type="button" name="NNRTIs">Non-Nucleoside Reverse Transcriptase Inhibitors</button>
+            <p>
+              Medication cat info here
+            </p>
+          </div>
+          <div class='medCat'>
+            <button type="button" name="PIs">Protease Inhibitors</button>
+            <p>
+              Medication cat info here
+            </p>
+          </div>
+          <div class='medCat'>
+            <button type="button" name="FIs">Fusion Inhibitors</button>
+            <p>
+              Medication cat info here
+            </p>
+          </div>
+          <br>
+          <div class='medCat'>
+            <button type="button" name="EIs">Entry Inhibitors</button>
+            <p>
+              Medication cat info here
+            </p>
+          </div>
+          <div class='medCat'>
+            <button type="button" name="IIs">Integrase Inhibitors</button>
+            <p>
+              Medication cat info here
+            </p>
+          </div>
+          <div class='medCat'>
+            <button type="button" name="PEs">Pharmacokinetic Enhancers</button>
+            <p>
+              Medication cat info here
+            </p>
+          </div>
+          <div class='medCat'>
+            <button type="button" name="Combo">Combination HIV Medicines</button>
+            <p>
+              Medication cat info here
+            </p>
+          </div>
+      </div>
+      <div class="filler">
+        - or -
+      </div>
+      <div class="click-to-list">
+        <button type="button" name="clickForFull">click here to view a full list of medications</button>
+      </div>
+      <div class="footer">
+        <!-- disclaimer here -->
+      </div>
+    </div>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+  </body>
+</html>
+<!--
+Questions:
+1. should i have a disclaimer popup when entering the page?
+2. should this be two pages or one?
+3. how should the drugs be coded? as objects? or use basic database?
+(need drug constructor)
+4. should drugs be constructed in separate js file to remain concise? -->
