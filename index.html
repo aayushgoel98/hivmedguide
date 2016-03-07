@@ -8,17 +8,18 @@
     <header>
       <nav>
         <div class="navigation">
+          <ul id='header-bar'>
+            <li id='logo'>hiv medfinder</li>
+          </ul>
         </div>
       </nav>
-      <div class="header">
-      </div>
     </header>
     <div class="container">
-      <div class="search-box">
+      <div class="search">
         <form class="search">
-          <label for="searchBox">
-            <h2>search by medication name:</h2><br/>
-            <input type="text" name="search"/>
+          <label for="search-box">
+            <p class='heading'>search by medication name:</p><br/>
+            <input type="text" name="search" id='search-box'/>
           </label>
         </form>
       </div>
@@ -26,54 +27,54 @@
         - or -
       </div>
       <div class="med-categories">
-          <h2>select a medication category:</h2><br/>
+          <p class='heading'>select a medication category:</p><br/>
           <div class='medCat'>
             <button type="button" name="NRTIs">Nucleoside Reverse Transcriptase Inhibitors</button>
             <p>
-              Medication cat info here
+              NRTIs block reverse transcriptase, an enzyme HIV needs to make copies of itself.
             </p>
           </div>
           <div class='medCat'>
             <button type="button" name="NNRTIs">Non-Nucleoside Reverse Transcriptase Inhibitors</button>
             <p>
-              Medication cat info here
+              NNRTIs bind to and later alter reverse transcriptase, an enzyme HIV needs to make copies of itself.
             </p>
           </div>
           <div class='medCat'>
             <button type="button" name="PIs">Protease Inhibitors</button>
             <p>
-              Medication cat info here
+              PIs block HIV protease, an enzyme HIV needs to make copies of itself
             </p>
           </div>
           <div class='medCat'>
             <button type="button" name="FIs">Fusion Inhibitors</button>
             <p>
-              Medication cat info here
+              Fusion inhibitors block HIV from entering the CD4 cells of the immune system.
             </p>
           </div>
           <br>
           <div class='medCat'>
             <button type="button" name="EIs">Entry Inhibitors</button>
             <p>
-              Medication cat info here
+              Entry inhibitors block proteins on the CD4 cells that HIV needs to enter the cells.
             </p>
           </div>
           <div class='medCat'>
             <button type="button" name="IIs">Integrase Inhibitors</button>
             <p>
-              Medication cat info here
+              Integrase inhibitors block HIV integrase, an enzyme HIV needs to make copies of itself.
             </p>
           </div>
           <div class='medCat'>
             <button type="button" name="PEs">Pharmacokinetic Enhancers</button>
             <p>
-              Medication cat info here
+              Pharmacokinetic enhancers are used in HIV treatment to increase the effectiveness of an HIV medicine included in an HIV regimen.
             </p>
           </div>
           <div class='medCat'>
             <button type="button" name="Combo">Combination HIV Medicines</button>
             <p>
-              Medication cat info here
+              Combination HIV medicines contain two or more HIV medicines from one or more drug classes.
             </p>
           </div>
       </div>
@@ -81,7 +82,7 @@
         - or -
       </div>
       <div class="click-to-list">
-        <button type="button" name="clickForFull">click here to view a full list of medications</button>
+        <button type="button" name="clickForFull" id='click-for-full'>click here to view a full list of medications</button>
       </div>
       <div class="footer">
         <!-- disclaimer here -->
