@@ -6,16 +6,34 @@
   </head>
   <body>
     <header>
-      <div class="header">
-        <!-- medication name -->
+      <nav>
+        <div class="navigation">
+          <ul id='header-bar'>
+            <li id='logo'>hiv medfinder</li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class='container'>
+      <div class="medication-name">
+        <p id='medication-name'></p>
       </div>
       <div class="blurb">
-        <!-- blurb pulled from fda site -->
+        <p id='blurb'></p>
       </div>
       <div class="assistance-container">
-        <div class="goodrx-widget">
+        <div class="goodrx-info">
+          <div id="goodrx_compare-price_widget"> </div>
+            <script>
+                var _grxdn = "truvada";
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                g.src="//s3.amazonaws.com/assets.goodrx.com/static/widgets/compare.min.js";
+                    s.parentNode.insertBefore(g,s)}(document,"script"));
+            </script>
         </div>
         <div class="assistance-link">
+          <div id='z1'>Assistance may be available from the medication's manufacturer</div>
+          <p id=assistance-link></p>
         </div>
       </div>
       <div class="adverse-reactions">
@@ -27,6 +45,16 @@
       <div class="interactions">
         <!-- posssible interaction checker? where to put? -->
       </div>
-    </header>
+    </div>
+
+    <div class="footer">
+      <!-- disclaimer here -->
+    </div>
+
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/hmac-sha256.js"></script>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/components/enc-base64-min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src='med-script.js'></script>
+    <link rel='stylesheet' type='text/css' href='med-style.css'>
   </body>
 </html>
