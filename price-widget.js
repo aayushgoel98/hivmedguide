@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
   var transferMed = readCookie('myMed').toString();
+
   if(transferMed === '' || transferMed === null){
     thisMed = 'Truvada';
   }
@@ -11,6 +12,9 @@ $(document).ready(function(){
   //var thisMed = 'Triumeq';
   var mykey = config.MY_KEY;
   var secretkey = config.SECRET_KEY;
+  var medData2 = {};
+
+  $('#med-name-here').text(thisMed);
 
   //functions go here
   function readCookie(name) {
@@ -28,16 +32,9 @@ $(document).ready(function(){
     var querystring = 'name=' + thisMed + '&api_key=' + mykey;
     var hash = CryptoJS.HmacSHA256(querystring, secretkey);
     var base63 = hash.toString(CryptoJS.enc.Base64);
-    console.log(base63);
     var base64 = base63.replace('/', '_');
     base64 = base64.replace('+', '_');
-    console.log(base64);
     var urlToGet = 'https://floating-island-78277.herokuapp.com/compare-price?' + querystring + '&sig=' + base64;
-
-    console.log(urlToGet);
-
-    // ajax request not working, suspect goodrx can't do frontend requests
-    // awaiting guidelines on requesting from proxy
 
     $.ajax({
       url: urlToGet,
@@ -53,11 +50,22 @@ $(document).ready(function(){
     });
   }
 
-
   function getMedPriceInfo(data){
     var medData = $.map(data, function(el) { return el; });
-    medData2 = medData;
+    medData2 = medData[0];
     console.log(medData2);
+
+    for(var i = 0; i < 3; i++){
+      var thisId = '#price' + i;
+      $(thisId).text('$' + medData2.prices[i]);
+      thisId = '#pharm' + i;
+      $(thisId).text(medData2.price_detail.pharmacy[i]);
+      thisId = '#coupon' + i;
+      $(thisId).html('<a href="' + medData2.price_detail.url[i] + '">get coupon</a>');
+    }
+
+    $('#goodrx-img').attr('href', medData2.url);
+
   }
 
   getGoodRx();

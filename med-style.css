@@ -42,11 +42,16 @@
   margin-top: 10%;
 }
 
-.goodrx-info {
+.goodrx {
   display: inline-block;
   width: 40%;
   float: left;
   margin-left: 5%;
+}
+
+.good-rx-prices, .good-rx-pharmacies, .good-rx-coupons {
+  display: inline-block;
+  padding-right: 1%;
 }
 
 .assistance-link {
