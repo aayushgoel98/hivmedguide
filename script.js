@@ -79,15 +79,17 @@ $(document).ready(function(){
   var allMeds = [];
 
   for (var i = 0; i < allMedGroups.length; i++){
-    var temp = allMedGroups[i].keys();
+    var temp = Object.keys(allMedGroups[i]);
+    temp.shift();
+    $.merge(allMeds, temp);
 /*    var temp = $.map(allMedGroups[i], function(el){return el});
     console.log(temp);
     allMeds.push(temp); */
   }
   console.log(allMeds);
 
-  console.log(autocompleteSource);
-
+//  console.log(autocompleteSource);
+/*
   $(function(){
     $('#search-box').autocomplete({
       source: allMedGroups;
