@@ -2,6 +2,7 @@ $(document).ready(function(){
 
   var isToggled = false;
   var isExpanded = false;
+  var myMed = '';
 
   var NRTImedications = {
     medClass : 'NRTIs',
@@ -79,6 +80,31 @@ $(document).ready(function(){
 
   var allMeds = [];
 
+  function createCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+  }
+
+  function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+  }
+
+  function eraseCookie(name) {
+    createCookie(name,"",-1);
+  }
+
   for (var i = 0; i < allMedGroups.length; i++){
     var temp = Object.keys(allMedGroups[i]);
     temp.shift();
@@ -115,9 +141,8 @@ $(document).ready(function(){
     else {
       $('.meds-list').empty();
     }
-  }); //medCats button click function
+  });
 
-  // LIST ALL MEDS
   function listAll(fromButton){
     $('.search').fadeToggle(100);
     $('.filler').fadeToggle(100);
@@ -128,7 +153,7 @@ $(document).ready(function(){
       $('#click-for-full').text('click here to go back');
       for(var i = 0; i < allMedGroups.length; i++){
         $.each(allMedGroups[i], function(key, value){
-          $('.meds-list').append('<p class = "med" id = ' + key + '>'+ key + '<br>' + '(' + value +')</p>');
+          $('.meds-list').append(' <p class = "med" id = ' + key + '>'+ key + '<br>' + '(' + value +')</p>');
         });
         $('#medClass').remove();
       }
@@ -140,12 +165,18 @@ $(document).ready(function(){
 
   }
 
-  // BUTTON CLICK CALLS LIST ALL MEDS
   $('#click-for-full').click(function(){
     isExpanded = !isExpanded;
     listAll(true, isExpanded);
   })
 
-  // SEARCH BOX CALLS LIST ALL MEDS
+  $('#search-box').autocomplete({
+    select: function(event, ui){
+      var uiObj = ui.item;
+      myMed = uiObj.value;
+      createCookie('myMed', myMed, 2);
+      window.location.href='medication.html';
+    }
+  });
 
-}); //doc.ready
+});
