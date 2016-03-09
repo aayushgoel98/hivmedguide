@@ -13,11 +13,15 @@ $(document).ready(function(){
   $('#assistance-link').html(testMed.assistanceId);
 
   function getGoodRx(){
-    var querystring = 'name=Truvada&api_key=c14b6f0700';
-    var hash = CryptoJS.HmacSHA256(querystring, 'T0SfZ5jz9mOXxoXvTpMuZw==');
+    var mykey = config.MY_KEY;
+    var secretkey = config.SECRET_KEY;
+    var querystring = 'name=Truvada&api_key=' + mykey;
+    console.log(querystring);
+    var hash = CryptoJS.HmacSHA256(querystring, secretkey);
+    console.log(secretkey);
     var base64 = hash.toString(CryptoJS.enc.Base64);
     var urlToGet = 'https://api.goodrx.com/low-price?' + querystring + '&sig=' + base64;
-    console.log(urlToGet);
+//    console.log(urlToGet);
     // $.ajax({
     //   url:
 

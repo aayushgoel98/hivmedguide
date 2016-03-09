@@ -31,6 +31,10 @@
 
 .medication-name {
   display: block;
+  font-size: 30px;
+  color: #20B2AA;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 .assistance-container {

@@ -28,55 +28,58 @@
       </div>
       <div class="med-categories">
           <p class='heading'>select a medication category:</p><br/>
-          <div class='medCat'>
-            <button type="button" name="NRTIs">Nucleoside Reverse Transcriptase Inhibitors</button>
+          <div class='medCat' id='NRTIs'>
+            <button type="button" name="NRTI" class='medCats'>Nucleoside Reverse Transcriptase Inhibitors</button>
             <p>
               NRTIs block reverse transcriptase, an enzyme HIV needs to make copies of itself.
             </p>
           </div>
-          <div class='medCat'>
-            <button type="button" name="NNRTIs">Non-Nucleoside Reverse Transcriptase Inhibitors</button>
+          <div class='medCat' id='NNRTIs'>
+            <button type="button" name="NNRTIs" class='medCats'>Non-Nucleoside Reverse Transcriptase Inhibitors</button>
             <p>
               NNRTIs bind to and later alter reverse transcriptase, an enzyme HIV needs to make copies of itself.
             </p>
           </div>
-          <div class='medCat'>
-            <button type="button" name="PIs">Protease Inhibitors</button>
+          <div class='medCat' id='PIs'>
+            <button type="button" name="PIs" class='medCats'>Protease Inhibitors</button>
             <p>
               PIs block HIV protease, an enzyme HIV needs to make copies of itself
             </p>
           </div>
-          <div class='medCat'>
-            <button type="button" name="FIs">Fusion Inhibitors</button>
+          <div class='medCat' id='FIs'>
+            <button type="button" name="FIs" class='medCats'>Fusion Inhibitors</button>
             <p>
               Fusion inhibitors block HIV from entering the CD4 cells of the immune system.
             </p>
           </div>
           <br>
-          <div class='medCat'>
-            <button type="button" name="EIs">Entry Inhibitors</button>
+          <div class='medCat' id='EIs'>
+            <button type="button" name="EIs" class='medCats'>Entry Inhibitors</button>
             <p>
               Entry inhibitors block proteins on the CD4 cells that HIV needs to enter the cells.
             </p>
           </div>
-          <div class='medCat'>
-            <button type="button" name="IIs">Integrase Inhibitors</button>
+          <div class='medCat' id='IIs'>
+            <button type="button" name="IIs" class='medCats'>Integrase Inhibitors</button>
             <p>
               Integrase inhibitors block HIV integrase, an enzyme HIV needs to make copies of itself.
             </p>
           </div>
-          <div class='medCat'>
-            <button type="button" name="PEs">Pharmacokinetic Enhancers</button>
+          <div class='medCat' id='PEs'>
+            <button type="button" name="PEs" class='medCats'>Pharmacokinetic Enhancers</button>
             <p>
               Pharmacokinetic enhancers are used in HIV treatment to increase the effectiveness of an HIV medicine included in an HIV regimen.
             </p>
           </div>
-          <div class='medCat'>
-            <button type="button" name="Combo">Combination HIV Medicines</button>
+          <div class='medCat' id='combos'>
+            <button type="button" name="Combo" class='medCats'>Combination HIV Medicines</button>
             <p>
               Combination HIV medicines contain two or more HIV medicines from one or more drug classes.
             </p>
           </div>
+      </div>
+      <div class="meds-list">
+        <!-- meds are listed here when clicked -->
       </div>
       <div class="filler">
         - or -
@@ -88,13 +91,18 @@
     <div class="footer">
       <!-- disclaimer here -->
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js">
+    </script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src='script.js'></script>
     <link rel='stylesheet' type='text/css' href='style.css'>
   </body>
 </html>
 <!--
-Questions:
-1. should i have a disclaimer popup when entering the page?
-2. should this be two pages or one?
-3. how should the drugs be coded? as objects? or use basic database?
-(need drug constructor)
-4. should drugs be constructed in separate js file to remain concise? -->
+To Do:
+1. Add fade toggle to all elements
+2. Add button click animation
+3. Add search box functionality
+
+ -->
