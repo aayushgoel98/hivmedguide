@@ -76,6 +76,19 @@ input {
   font-size: 12px;
 }
 
+.meds-list {
+  display: block;
+  margin-bottom: 100px;
+}
+
+.med {
+  display: inline-block;
+  width: 300px;
+  color: #20B2AA;
+  vertical-align: top;
+  font-weight: bolder;
+}
+
 .footer {
   position: fixed;
   bottom: 0;

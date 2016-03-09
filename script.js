@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
   var isToggled = false;
+  var isExpanded = false;
 
   var NRTImedications = {
     medClass : 'NRTIs',
@@ -84,8 +85,6 @@ $(document).ready(function(){
     $.merge(allMeds, temp);
   }
 
-  console.log(allMeds);
-
   $(function(){
     $('#search-box').autocomplete({
       source: allMeds
@@ -96,7 +95,6 @@ $(document).ready(function(){
     var curParent = $(event.target).parent().attr('id');
     var curDiv = '#' + curParent;
     isToggled = !isToggled;
-    console.log(isToggled);
 
     $('.medCat').not(curDiv).fadeToggle(100);
     $('.filler').fadeToggle(100);
@@ -108,7 +106,7 @@ $(document).ready(function(){
       for(var i = 0; i < allMedGroups.length; i++){
         if (allMedGroups[i].medClass === curParent){
           $.each(allMedGroups[i], function(key, value){
-            $('.meds-list').append('<p id = ' + key + '>'+ key + value +'</p>');
+            $('.meds-list').append('<p id = ' + key + '>'+ key + '<br>' + '(' + value +')</p>');
           });
           $('#medClass').remove();
         }
@@ -117,16 +115,37 @@ $(document).ready(function(){
     else {
       $('.meds-list').empty();
     }
-//    var putHere = $('.meds-list');
-
-/*
-    $(curDiv).animate({
-      left: '+=100',
-    }, 5000, function(){
-      console.log('animation done');
-   }); //medCats button animate function
-*/
-
   }); //medCats button click function
+
+  // LIST ALL MEDS
+  function listAll(fromButton){
+    $('.search').fadeToggle(100);
+    $('.filler').fadeToggle(100);
+    $('.medCat').fadeToggle(100);
+    $('.heading').fadeToggle(100);
+
+    if(fromButton && isExpanded){
+      $('#click-for-full').text('click here to go back');
+      for(var i = 0; i < allMedGroups.length; i++){
+        $.each(allMedGroups[i], function(key, value){
+          $('.meds-list').append('<p class = "med" id = ' + key + '>'+ key + '<br>' + '(' + value +')</p>');
+        });
+        $('#medClass').remove();
+      }
+    }
+    else if (fromButton) {
+      $('#click-for-full').text('click here to view a full list of medications');
+      $('.meds-list').empty();
+    }
+
+  }
+
+  // BUTTON CLICK CALLS LIST ALL MEDS
+  $('#click-for-full').click(function(){
+    isExpanded = !isExpanded;
+    listAll(true, isExpanded);
+  })
+
+  // SEARCH BOX CALLS LIST ALL MEDS
 
 }); //doc.ready
