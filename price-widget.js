@@ -22,22 +22,18 @@ var thisMed = 'Truvada';
     var querystring = 'name=' + thisMed + '&api_key=' + mykey;
     var hash = CryptoJS.HmacSHA256(querystring, secretkey);
     var base64 = hash.toString(CryptoJS.enc.Base64);
-    var urlToGet = 'https://api.goodrx.com/compare-price?' + querystring + '&sig=' + base64;
+    var urlToGet = 'https://floating-island-78277.herokuapp.com/compare-price?' + querystring + '&sig=' + base64;
 
     console.log(urlToGet);
 
     // ajax request not working, suspect goodrx can't do frontend requests
     // awaiting guidelines on requesting from proxy
 
-    /*
     $.ajax({
       url: urlToGet,
       type: 'GET',
       crossDomain: true,
-     dataType: 'jsonp',
-      headers: {
-        'Access-Control-Allow-Origin' : '*'
-      },
+      dataType: 'json',
       success: function(data){
         getMedPriceInfo(data);
       },
@@ -45,10 +41,10 @@ var thisMed = 'Truvada';
         console.log('error ', xhr, status);
       }
     });
-    */
+
   }
 
-  /*
+
   function getMedPriceInfo(data){
     var medData = $.map(data, function(el) { return el; });
     medData2 = medData;
@@ -57,6 +53,6 @@ var thisMed = 'Truvada';
   }
 
   getGoodRx();
-  */
+
 
 });
