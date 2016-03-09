@@ -82,20 +82,16 @@ $(document).ready(function(){
     var temp = Object.keys(allMedGroups[i]);
     temp.shift();
     $.merge(allMeds, temp);
-/*    var temp = $.map(allMedGroups[i], function(el){return el});
-    console.log(temp);
-    allMeds.push(temp); */
   }
+
   console.log(allMeds);
 
-//  console.log(autocompleteSource);
-/*
   $(function(){
     $('#search-box').autocomplete({
-      source: allMedGroups;
+      source: allMeds
     });
   });
-*/
+
   $('.medCats').click(function(){
     var curParent = $(event.target).parent().attr('id');
     var curDiv = '#' + curParent;
