@@ -4,15 +4,15 @@ $(document).ready(function(){
 
   var gilead = '<a href="https://www.gileadadvancingaccess.com/"><button id="asst-button">here.</button></a>'
 
-  var testMed = {
-    name: 'Truvada',
-    blurb: 'Truvada is a single pill that contains the following two different HIV medicines: Emtricitabine (brand name: Emtriva). Tenofovir disoproxil fumarate (brand name: Viread).',
-    assistanceId: gilead,
-  };
-
-  $('#medication-name').text(testMed.name);
-  $('#blurb').text(testMed.blurb);
-  $('#assistance-link').html(testMed.assistanceId);
+  // var testMed = {
+  //   name: 'Truvada',
+  //   blurb: 'Truvada is a single pill that contains the following two different HIV medicines: Emtricitabine (brand name: Emtriva). Tenofovir disoproxil fumarate (brand name: Viread).',
+  //   assistanceId: gilead,
+  // };
+  //
+  // $('#medication-name').text(testMed.name);
+  // $('#blurb').text(testMed.blurb);
+  // $('#assistance-link').html(testMed.assistanceId);
 
   function readCookie(name) {
     var nameEQ = name + "=";
@@ -25,13 +25,13 @@ $(document).ready(function(){
     return null;
   }
 
-  function getGoodRx(){
-    var mykey = config.MY_KEY;
-    var secretkey = config.SECRET_KEY;
-    var querystring = 'name=Truvada&api_key=' + mykey;
-    var hash = CryptoJS.HmacSHA256(querystring, secretkey);
-    var base64 = hash.toString(CryptoJS.enc.Base64);
-    var urlToGet = 'https://api.goodrx.com/low-price?' + querystring + '&sig=' + base64;
+  // function getGoodRx(){
+  //   var mykey = config.MY_KEY;
+  //   var secretkey = config.SECRET_KEY;
+  //   var querystring = 'name=Truvada&api_key=' + mykey;
+  //   var hash = CryptoJS.HmacSHA256(querystring, secretkey);
+  //   var base64 = hash.toString(CryptoJS.enc.Base64);
+  //   var urlToGet = 'https://api.goodrx.com/low-price?' + querystring + '&sig=' + base64;
 //    console.log(urlToGet);
     // $.ajax({
     //   url:
