@@ -1,8 +1,14 @@
 $(document).ready(function(){
 
-  // vars go here
-//  var thisMed = readCookie('myMed').toString();
-var thisMed = 'Truvada';
+  var transferMed = readCookie('myMed').toString();
+  if(transferMed === '' || transferMed === null){
+    thisMed = 'Truvada';
+  }
+  else {
+    thisMed = transferMed;
+  }
+
+  //var thisMed = 'Triumeq';
   var mykey = config.MY_KEY;
   var secretkey = config.SECRET_KEY;
 
@@ -21,7 +27,11 @@ var thisMed = 'Truvada';
   function getGoodRx(){
     var querystring = 'name=' + thisMed + '&api_key=' + mykey;
     var hash = CryptoJS.HmacSHA256(querystring, secretkey);
-    var base64 = hash.toString(CryptoJS.enc.Base64);
+    var base63 = hash.toString(CryptoJS.enc.Base64);
+    console.log(base63);
+    var base64 = base63.replace('/', '_');
+    base64 = base64.replace('+', '_');
+    console.log(base64);
     var urlToGet = 'https://floating-island-78277.herokuapp.com/compare-price?' + querystring + '&sig=' + base64;
 
     console.log(urlToGet);
@@ -41,7 +51,6 @@ var thisMed = 'Truvada';
         console.log('error ', xhr, status);
       }
     });
-
   }
 
 
@@ -49,10 +58,8 @@ var thisMed = 'Truvada';
     var medData = $.map(data, function(el) { return el; });
     medData2 = medData;
     console.log(medData2);
-    console.log(medData);
   }
 
   getGoodRx();
-
 
 });
