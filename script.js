@@ -132,9 +132,11 @@ $(document).ready(function(){
       for(var i = 0; i < allMedGroups.length; i++){
         if (allMedGroups[i].medClass === curParent){
           $.each(allMedGroups[i], function(key, value){
-            $('.meds-list').append('<p id = ' + key + '>'+ key + '<br>' + '(' + value +')</p>');
+            $('.meds-list').append('<p class="med" id = ' + key + '><a href="medication.html">'+ key + '<br>' + '(' + value +')</a></p>');
           });
           $('#medClass').remove();
+          myMed = key;
+          createCookie('myMed', myMed, 2);
         }
       }
     }
@@ -153,9 +155,11 @@ $(document).ready(function(){
       $('#click-for-full').text('click here to go back');
       for(var i = 0; i < allMedGroups.length; i++){
         $.each(allMedGroups[i], function(key, value){
-          $('.meds-list').append(' <p class = "med" id = ' + key + '>'+ key + '<br>' + '(' + value +')</p>');
+          $('.meds-list').append(' <p class = "med" id = ' + key + '><a href="medication.html">'+ key + '<br>' + '(' + value +')</a></p>');
         });
         $('#medClass').remove();
+        myMed = key;
+        createCookie('myMed', myMed, 2);
       }
     }
     else if (fromButton) {
