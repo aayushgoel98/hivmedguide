@@ -35,9 +35,8 @@ $(document).ready(function(){
 //    console.log(urlToGet);
     // $.ajax({
     //   url:
+//  }
 
-  }
-
-  getGoodRx();
+//  getGoodRx();
 
 });
