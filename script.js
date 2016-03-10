@@ -132,11 +132,12 @@ $(document).ready(function(){
       for(var i = 0; i < allMedGroups.length; i++){
         if (allMedGroups[i].medClass === curParent){
           $.each(allMedGroups[i], function(key, value){
-            $('.meds-list').append('<p class="med" id = ' + key + '><a href="medication.html">'+ key + '<br>' + '(' + value +')</a></p>');
+            $('.meds-list').append('<p class="med">'+ key + '<br>' + '(' + value +')</p>');
           });
           $('#medClass').remove();
-          myMed = key;
-          createCookie('myMed', myMed, 2);
+          //myMed = thiskey;
+          //console.log(myMed);
+          //createCookie('myMed', myMed, 2);
         }
       }
     }
@@ -155,11 +156,11 @@ $(document).ready(function(){
       $('#click-for-full').text('click here to go back');
       for(var i = 0; i < allMedGroups.length; i++){
         $.each(allMedGroups[i], function(key, value){
-          $('.meds-list').append(' <p class = "med" id = ' + key + '><a href="medication.html">'+ key + '<br>' + '(' + value +')</a></p>');
+          $('.meds-list').append('<p class = "med">'+ key + '<br>' + '(' + value +')</p>');
         });
         $('#medClass').remove();
-        myMed = key;
-        createCookie('myMed', myMed, 2);
+        //myMed = key;
+        //createCookie('myMed', myMed, 2);
       }
     }
     else if (fromButton) {
@@ -172,7 +173,7 @@ $(document).ready(function(){
   $('#click-for-full').click(function(){
     isExpanded = !isExpanded;
     listAll(true, isExpanded);
-  })
+  });
 
   $('#search-box').autocomplete({
     select: function(event, ui){
@@ -181,6 +182,10 @@ $(document).ready(function(){
       createCookie('myMed', myMed, 2);
       window.location.href='medication.html';
     }
+  });
+
+  $(document).on('click', '.med', function(){
+    console.log('clicked');
   });
 
 });
