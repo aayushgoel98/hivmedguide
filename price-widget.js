@@ -30,10 +30,14 @@ $(document).ready(function(){
 
   function getGoodRx(){
     var querystring = 'name=' + thisMed + '&api_key=' + mykey;
+    console.log(querystring);
     var hash = CryptoJS.HmacSHA256(querystring, secretkey);
+    console.log(hash);
     var base63 = hash.toString(CryptoJS.enc.Base64);
-    var base64 = base63.replace('/', '_');
-    base64 = base64.replace('+', '_');
+    console.log(base63);
+    var base64 = base63.replace(/[/]/g, '_');
+    base64 = base64.replace(/[+]/g, '_');
+    console.log(base64);
     var urlToGet = 'https://floating-island-78277.herokuapp.com/compare-price?' + querystring + '&sig=' + base64;
 
     $.ajax({

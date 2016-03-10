@@ -7,11 +7,11 @@ $(document).ready(function(){
   var NRTImedications = {
     medClass : 'NRTIs',
     'Ziagen' : 'abacavir, cbacavir sulfate, ABC',
-    'Videx, Videx EC' : 'didanosine, delayed-release didanosine, dideoxyinosine, enteric-coated didanosine, ddI, ddI EC',
+    'Videx' : 'videx ec, didanosine, delayed-release didanosine, dideoxyinosine, enteric-coated didanosine, ddI, ddI EC',
     'Emtriva' : 'emtricitabine (FTC)',
     'Epivir' : 'lamivudine (3TC)',
     'Zerit' : 'stavudine (d4T)',
-    'Vilread' : 'tenofovir disoproxil fumarate (tenofovir DF, TDF)',
+    'Viread' : 'tenofovir disoproxil fumarate (tenofovir DF, TDF)',
     'Retrovir' : 'zidovudine, azidothymidine, AZT, ZDV'
   }
 
@@ -20,7 +20,7 @@ $(document).ready(function(){
     'Rescriptor' : 'delavirdine (delavirdine mesylate, DLV)',
     'Sustiva' : 'efavirenz (EEV)',
     'Intelence' : 'etravirine (ETR)',
-    'Viramune, Viramune XR' : 'nevirapine (extended-release nevirapine, NVP)',
+    'Viramune' : 'nevirapine (extended-release nevirapine, NVP)',
     'Edurant' : 'rilpivirine (rilpivirine hydrochloride, RPV)'
   }
 
@@ -132,12 +132,10 @@ $(document).ready(function(){
       for(var i = 0; i < allMedGroups.length; i++){
         if (allMedGroups[i].medClass === curParent){
           $.each(allMedGroups[i], function(key, value){
-            $('.meds-list').append('<p class="med">'+ key + '<br>' + '(' + value +')</p>');
+            if(key != 'medClass'){
+              $('.meds-list').append('<p class="med" id="' + key + '">'+ key + '<br>' + '(' + value +')</p>');
+            }
           });
-          $('#medClass').remove();
-          //myMed = thiskey;
-          //console.log(myMed);
-          //createCookie('myMed', myMed, 2);
         }
       }
     }
@@ -156,11 +154,10 @@ $(document).ready(function(){
       $('#click-for-full').text('click here to go back');
       for(var i = 0; i < allMedGroups.length; i++){
         $.each(allMedGroups[i], function(key, value){
-          $('.meds-list').append('<p class = "med">'+ key + '<br>' + '(' + value +')</p>');
+          if(key != 'medClass'){
+            $('.meds-list').append('<p class = "med" id = "' + key + '">'+ key + '<br>' + '(' + value +')</p>');
+          }
         });
-        $('#medClass').remove();
-        //myMed = key;
-        //createCookie('myMed', myMed, 2);
       }
     }
     else if (fromButton) {
@@ -185,7 +182,9 @@ $(document).ready(function(){
   });
 
   $(document).on('click', '.med', function(){
-    console.log('clicked');
+    var myMed = $(this).attr('id');
+    createCookie('myMed', myMed, 2);
+    window.location.href='medication.html';
   });
 
 });
