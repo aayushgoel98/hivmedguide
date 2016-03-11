@@ -38,6 +38,10 @@
   margin-bottom: 1%;
 }
 
+.med-info-box {
+  margin-left: 50px;
+}
+
 .medication-picture {
   vertical-align: middle;
   float: left;
