@@ -31,6 +31,7 @@ function geocodeOthers(geocoder, resultsMap){
   var clinicAddresses = [];
 
   (function(){
+    console.log(searchZip);
     $.ajax({
       url: 'https://locator.aids.gov/data?zip=' + searchZip + '&service=clinics',
       type: 'GET',
