@@ -30,7 +30,6 @@ $(document).ready(function(){
 
     function populateData(json){
       var myData = json;
-      console.log(myData);
       var myMaker = '';
       var allMakers = [];
 

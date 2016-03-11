@@ -131,8 +131,24 @@
   margin-left: 10%;
 }
 
+.outer {
+  border: 2px solid black;
+}
+
+.clinic-locator {
+  border: 2px solid blue;
+  display: block;
+  margin-left: 100px;
+}
+
+#map {
+  height: 100%;
+  display: block;
+}
 
 .footer {
+  font-size: 10px;
+  padding-left: 35%;
   position: fixed;
   bottom: 0;
   left: 0;
