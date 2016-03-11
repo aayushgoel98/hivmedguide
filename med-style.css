@@ -115,6 +115,13 @@
   text-align: center;
 }
 
+#mh-map {
+  text-align: center;
+  margin-top: 6%;
+  display: inline-block;
+  width: 100%;
+}
+
 #asst-button {
   width: 250px;
   height: 50px;
@@ -132,7 +139,7 @@
 }
 
 .outer {
-  margin-top: 6%;
+  margin-top: 2%;
 }
 
 .clinic-locator {
