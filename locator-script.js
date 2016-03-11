@@ -1,52 +1,45 @@
-$(document).ready(function(){
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 47.6229, lng: -122.3165},
+    zoom: 8
+  });
+  var geocoder = new google.maps.Geocoder();
+  document.getElementById('submit').addEventListener('click', function(){
+    geocodeAddress(geocoder, map);
+    geocodeOthers(geocoder, map);
+  });
+}
 
-  var myZip = 98122;
-
-  console.log('script loaded');
-
-  $.ajax({
-    url: 'https://locator.aids.gov/data?zip=98122&service=clinics',
-    type: 'GET',
-    dataType: 'jsonp',
-    success: function(data){
-      findServices(data);
+function geocodeAddress(geocoder, resultsMap) {
+  var address = document.getElementById('address').value;
+  geocoder.geocode({'address': address}, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      resultsMap.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+        map: resultsMap,
+        position: results[0].geometry.location
+      });
+    } else {
+      console.log('Geocode was not successful for the following reason: ' + status);
     }
   });
+}
 
-  function findServices(data){
-    var myData = data;
-    console.log(myData);
-//    myData.services[1].providers
+function geocodeOthers(geocoder, resultsMap){
+  for(var i = 0; i < 5; i++){
+    // var address = window[clinicAddresses][i];
+    // console.log(address);
+    var address = '98112';
+    geocoder.geocode({'address': address}, function(results, status) {
+      if (status === google.maps.GeocoderStatus.OK) {
+        resultsMap.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+          map: resultsMap,
+          position: results[0].geometry.location
+        });
+      } else {
+        console.log('Geocode was not successful for the following reason: ' + status);
+      }
+    });
   }
-
-  // function initialize() {
-  //   geocoder = new google.maps.Geocoder();
-  //   var lat = '';
-  //   var lng = '';
-  //   var address = 98122;
-  //   var geocoder;
-  //   geocoder.geocode( { 'address': address}, function(results, status) {
-  //     if (status == google.maps.GeocoderStatus.OK) {
-  //       lat = results[0].geometry.location.lat();
-  //       lng = results[0].geometry.location.lng();
-  //     } else {
-  //       alert("Geocode was not successful for the following reason: " + status);
-  //     }
-  //   });
-  //
-  //   console.log('Latitude: ' + lat + ' Logitude: ' + lng);
-  //
-  //
-  //
-  //   var marker = new google.maps.Marker({
-  //     position: myLatLng,
-  //     map: map,
-  //     title: 'Hello World!'
-  //   });
-  // }
-  //
-  // initialize();
-
-
-
-});
+};

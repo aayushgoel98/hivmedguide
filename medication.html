@@ -43,38 +43,14 @@
         </div>
       </div>
       <div class="outer" style='width:100%; height:300px; position: relative; display: inline-block'>
+        <div class="map-submit">
+          <input id="address" type="textbox" value="98122"><br>
+          <input id="submit" type="button" value="Find Clinics">
+        </div>
         <div class="clinic-locator" style='width:360px; height:100%'>
           <div id="map"></div>
-          <script>
-          function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-              center: {lat: 47.6229, lng: -122.3165},
-              zoom: 8
-            });
-            var geocoder = new google.maps.Geocoder();
-            document.getElementById('submit').addEventListener('click', function(){
-              geocodeAddress(geocoder, map);
-            });
-          }
-          function geocodeAddress(geocoder, resultsMap) {
-            var address = document.getElementById('address').value;
-            geocoder.geocode({'address': address}, function(results, status) {
-              if (status === google.maps.GeocoderStatus.OK) {
-                resultsMap.setCenter(results[0].geometry.location);
-                var marker = new google.maps.Marker({
-                  map: resultsMap,
-                  position: results[0].geometry.location
-                });
-              } else {
-                console.log('Geocode was not successful for the following reason: ' + status);
-              }
-            });
-          }
-          </script>
         </div>
-        <div class="map-submit">
-          <input id="address" type="textbox" value="Seattle, WA">
-          <input id="submit" type="button" value="Geocode">
+        <div class="clinic-results">
         </div>
       </div>
       <div class="adverse-events">
@@ -109,6 +85,8 @@
     <script type="text/javascript" src='med-script.js'></script>
     <script type="text/javascript" src='get-aidsinfogov.js'></script>
     <script type="text/javascript" src='get-fdainfo.js'></script>
+    <script type="text/javascript" src='clinic-script.js'></script>
     <script type="text/javascript" src='locator-script.js'></script>
+    </script>
   </body>
 </html>
