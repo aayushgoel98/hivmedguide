@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Medication</title>
+    <link rel='stylesheet' type='text/css' href='med-style.css'/>
   </head>
   <body>
     <header>
@@ -18,8 +19,11 @@
       <div class="medication-name">
         <p id='medication-name'></p>
       </div>
-      <div class="blurb">
-        <p id='blurb'></p>
+      <div class='med-info-box'>
+        <div class="blurb">
+          <div class="medication-picture"></div>
+          <p id='blurb'></p>
+        </div>
       </div>
       <div class="assistance-container">
         <div class="med-heading" id='mh-assist'>
@@ -34,8 +38,8 @@
           <div class="good-rx-logo"><a id='goodrx-img'><img src='goodrx.png'/></a></div>
         </div>
         <div class="assistance-link">
-          <div id='z1'>Assistance may be available from the medication's manufacturer</div>
-          <p id=assistance-link></p>
+          <div id='z1'>Assistance may be available from the medication's manufacturer below:</div><br>
+          <a id='asst-button'><button type="button" name="button" id='assistance-button'></button></a>
         </div>
       </div>
       <div class="adverse-events">
@@ -69,6 +73,5 @@
     <script type="text/javascript" src='med-script.js'></script>
     <script type="text/javascript" src='get-aidsinfogov.js'></script>
     <script type="text/javascript" src='get-fdainfo.js'></script>
-    <link rel='stylesheet' type='text/css' href='med-style.css'/>
   </body>
 </html>
