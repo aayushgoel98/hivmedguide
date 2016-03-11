@@ -21,19 +21,8 @@ $(document).ready(function(){
     return null;
   }
 
-  $.ajax({
-    url: 'http://aidsinfo.nih.gov/api/drugs/272',
-    type: 'GET',
-    crossOrigin: true,
-    dataType: 'jsonp',
-    success: function(data){
-      collectData(data);
-    }
+  $.getJSON('reducedData.json', function(json){
+    console.log(json);
   });
-
-  function collectData(data){
-    var thisData = $.map(data, function(el){return el});
-    console.log(thisData);
-  }
 
 });

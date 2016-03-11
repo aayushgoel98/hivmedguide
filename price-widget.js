@@ -53,7 +53,6 @@ $(document).ready(function(){
   function getMedPriceInfo(data){
     var medData = $.map(data, function(el) { return el; });
     medData2 = medData[0];
-    console.log(medData2);
 
     for(var i = 0; i < 3; i++){
       var thisId = '#price' + i;

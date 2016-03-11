@@ -1,5 +1,4 @@
 * {
-  text-align: center;
   font-family: sans-serif;
 }
 
@@ -30,6 +29,7 @@
 }
 
 .medication-name {
+  text-align: center;
   display: block;
   font-size: 30px;
   color: #20B2AA;
@@ -38,11 +38,13 @@
 }
 
 .assistance-container {
+  text-align: center;
   display: block;
   margin-top: 10%;
 }
 
 .goodrx {
+  text-align: center
   display: inline-block;
   width: 40%;
   float: left;
@@ -58,6 +60,25 @@
   display: inline-block;
   width: 40%;
   float: right;
+}
+
+.adverse-events {
+  text-align: left;
+  margin-left: 50px;
+  margin-top: 20px;
+  display: inline-block;
+  text-align: left !important;
+}
+
+.med-heading {
+  text-align: left;
+  display: block;
+  font-size: 20px;
+  color: #20B2AA;
+}
+
+#mh-assist {
+  margin-left: 50px;
 }
 
 #asst-button {
