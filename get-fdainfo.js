@@ -35,18 +35,10 @@ $(document).ready(function(){
 
     function adverseData(data){
       var thisData = $.map(data, function(el){return el});
-      var stringBack = '';
+
       for(var i = 1; i <= 25; i++){
-        var reaction = thisData[i].term.toLowerCase();
-        var count = thisData[i].count;
-        if(i === 25){
-          stringBack += reaction + ': ' + count + '.';
-        }
-        else{
-          stringBack += reaction + ': ' + count + ', ';
-        }
+        $('.med-adverse-events').append('<div class="adverse-div"><p>' + thisData[i].term.toLowerCase() + ':<br>' + thisData[i].count + '</p></div>');
       }
-      $('.med-adverse-events').text(stringBack);
     }
   })();
 

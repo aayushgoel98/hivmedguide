@@ -26,6 +26,7 @@
   margin-top: 8%;
   width: 80%;
   margin-left:10%;
+  margin-bottom: 60px;
 }
 
 .medication-name {
@@ -89,9 +90,17 @@
 .adverse-events {
   text-align: left;
   margin-left: 50px;
-  margin-top: 20px;
+  margin-top: 50px;
   display: inline-block;
   text-align: left !important;
+}
+
+.adverse-div {
+  vertical-align: top;
+  display: inline-block;
+  width: 15%;
+  padding: 0% 1% 0% 1%;
+  margin: 0% 1% 0% 1%;
 }
 
 .med-heading {
