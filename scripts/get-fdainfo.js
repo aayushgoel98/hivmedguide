@@ -76,40 +76,13 @@ $(document).ready(function(){
     });
 
     function interactionsData(data) {
-      var drugMixData = data;
-      console.log(drugMixData);
-    }
+      var interactArray = data.interactionTypeGroup[0].interactionType[0].interactionPair;
+      console.log(interactArray[1].description);
 
-    // function adverseData(data){
-    //   var thisData = $.map(data, function(el){return el});
-    //
-    //   for(var i = 1; i <= 25; i++){
-    //     $('.med-adverse-events').append('<div class="adverse-div"><p>' + thisData[i].term.toLowerCase() + ':<br>' + thisData[i].count + '</p></div>');
-    //   }
-    // }
-  })();
-
-  // adverse events iife
-  (function() {
-    $.ajax({
-      url: 'https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:"' + thisMed + '"&count=patient.reaction.reactionmeddrapt.exact',
-      type: 'GET',
-      crossOrigin: true,
-      dataType: 'json',
-      success: function(data){
-        adverseData(data);
-      }
-    });
-
-    function adverseData(data){
-      var thisData = $.map(data, function(el){return el});
-
-      for(var i = 1; i <= 25; i++){
-        $('.med-adverse-events').append('<div class="adverse-div"><p>' + thisData[i].term.toLowerCase() + ':<br>' + thisData[i].count + '</p></div>');
+      for (var i = 0; i < interactArray.length; i++) {
+        $('.med-adverse-events').append('<div class="adverse-div"><p>' + interactArray[i].description + '</p></div>');
       }
     }
   })();
-
-  //
 
 });
