@@ -9,14 +9,12 @@ $(document).ready(function(){
     thisMed = transferMed;
   }
 
-  //var thisMed = 'Triumeq';
   var mykey = config.MY_KEY;
   var secretkey = config.SECRET_KEY;
   var medData2 = {};
 
   $('#med-name-here').text(thisMed);
 
-  //functions go here
   function readCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
@@ -64,9 +62,7 @@ $(document).ready(function(){
     }
 
     $('#goodrx-img').attr('href', medData2.url);
-
   }
 
   getGoodRx();
-
 });

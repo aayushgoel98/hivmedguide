@@ -24,7 +24,7 @@ $(document).ready(function(){
 
   // iife to populate page w/aidsinfo.gov data
   (function(){
-    $.getJSON('reducedData.json', function(json){
+    $.getJSON('../assets/reducedData.json', function(json){
       populateData(json);
     });
 

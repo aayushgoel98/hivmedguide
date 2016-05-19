@@ -177,7 +177,7 @@ $(document).ready(function(){
       var uiObj = ui.item;
       myMed = uiObj.value;
       createCookie('myMed', myMed, 2);
-      window.location.href='medication.html';
+      window.location.href='views/medication.html';
     }
   });
 
