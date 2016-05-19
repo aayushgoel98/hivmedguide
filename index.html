@@ -1,101 +1,113 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <title>HIV Medication Guide</title>
-    <link rel='stylesheet' type='text/css' href='style.css'>
+    <link rel='stylesheet' type='text/css' href='styles/style.css'>
   </head>
+
   <body>
     <header>
+
       <nav>
-        <div class="navigation">
+        <div class='navigation'>
           <ul id='header-bar'>
             <li id='logo'>hiv medfinder</li>
           </ul>
         </div>
       </nav>
     </header>
-    <div class="container">
-      <div class="search">
-        <form class="search">
-          <label for="search-box">
+
+    <div class='container'>
+
+      <div class='search'>
+        <form class='search'>
+          <label for='search-box'>
             <p class='heading'>search by medication name:</p><br/>
-            <div class="ui-widget">
+            <div class='ui-widget'>
               <input id='search-box'/>
             </div>
           </label>
         </form>
       </div>
-      <div class="filler">
+
+      <div class='filler'>
         - or -
       </div>
-      <div class="med-categories">
+
+      <div class='med-categories'>
           <p class='heading'>select a medication category:</p><br/>
           <div class='medCat' id='NRTIs'>
-            <button type="button" name="NRTI" class='medCats'>Nucleoside Reverse Transcriptase Inhibitors</button>
+            <button type='button' name='NRTI' class='medCats'>Nucleoside Reverse Transcriptase Inhibitors</button>
             <p>
               NRTIs block reverse transcriptase, an enzyme HIV needs to make copies of itself.
             </p>
           </div>
           <div class='medCat' id='NNRTIs'>
-            <button type="button" name="NNRTIs" class='medCats'>Non-Nucleoside Reverse Transcriptase Inhibitors</button>
+            <button type='button' name='NNRTIs' class='medCats'>Non-Nucleoside Reverse Transcriptase Inhibitors</button>
             <p>
               NNRTIs bind to and later alter reverse transcriptase, an enzyme HIV needs to make copies of itself.
             </p>
           </div>
           <div class='medCat' id='PIs'>
-            <button type="button" name="PIs" class='medCats'>Protease Inhibitors</button>
+            <button type='button' name='PIs' class='medCats'>Protease Inhibitors</button>
             <p>
               PIs block HIV protease, an enzyme HIV needs to make copies of itself
             </p>
           </div>
           <div class='medCat' id='FIs'>
-            <button type="button" name="FIs" class='medCats'>Fusion Inhibitors</button>
+            <button type='button' name='FIs' class='medCats'>Fusion Inhibitors</button>
             <p>
               Fusion inhibitors block HIV from entering the CD4 cells of the immune system.
             </p>
           </div>
           <br>
           <div class='medCat' id='EIs'>
-            <button type="button" name="EIs" class='medCats'>Entry Inhibitors</button>
+            <button type='button' name='EIs' class='medCats'>Entry Inhibitors</button>
             <p>
               Entry inhibitors block proteins on the CD4 cells that HIV needs to enter the cells.
             </p>
           </div>
           <div class='medCat' id='IIs'>
-            <button type="button" name="IIs" class='medCats'>Integrase Inhibitors</button>
+            <button type='button' name='IIs' class='medCats'>Integrase Inhibitors</button>
             <p>
               Integrase inhibitors block HIV integrase, an enzyme HIV needs to make copies of itself.
             </p>
           </div>
           <div class='medCat' id='PEs'>
-            <button type="button" name="PEs" class='medCats'>Pharmacokinetic Enhancers</button>
+            <button type='button' name='PEs' class='medCats'>Pharmacokinetic Enhancers</button>
             <p>
               Pharmacokinetic enhancers are used in HIV treatment to increase the effectiveness of an HIV medicine included in an HIV regimen.
             </p>
           </div>
           <div class='medCat' id='combos'>
-            <button type="button" name="Combo" class='medCats'>Combination HIV Medicines</button>
+            <button type='button' name='Combo' class='medCats'>Combination HIV Medicines</button>
             <p>
               Combination HIV medicines contain two or more HIV medicines from one or more drug classes.
             </p>
           </div>
       </div>
-      <div class="filler">
+
+      <div class='filler'>
         - or -
       </div>
-      <div class="click-to-list">
-        <button type="button" name="clickForFull" id='click-for-full'>click here to view a full list of medications</button>
+
+      <div class='click-to-list'>
+        <button type='button' name='clickForFull' id='click-for-full'>click here to view a full list of medications</button>
       </div>
-      <div class="meds-list"></div>
+
+      <div class='meds-list'></div>
     </div>
-    <div class="footer">
-      This information not intended to serve as medical advice. Please read the <a href='disclaimer.html'>Disclaimer</a>.
+
+    <div class='footer'>
+      This information not intended to serve as medical advice. Please read the <a href='views/disclaimer.html'>Disclaimer</a>.
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js">
-    </script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <script type="text/javascript" src='script.js'></script>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js'></script>
+    <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css'/>
+    <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
+    <script type='text/javascript' src='scripts/script.js'></script>
+
   </body>
 </html>

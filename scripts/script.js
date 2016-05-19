@@ -184,7 +184,7 @@ $(document).ready(function(){
   $(document).on('click', '.med', function(){
     var myMed = $(this).attr('id');
     createCookie('myMed', myMed, 2);
-    window.location.href='medication.html';
+    window.location.href='views/medication.html';
   });
 
 });
