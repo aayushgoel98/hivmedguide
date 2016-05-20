@@ -97,8 +97,8 @@ $(document).ready(function(){
         $('#assistance-button').text(myMaker + ' patient assistance program');
       })();
 
-    } //populate Data from aidsmedgov info
+    }
 
-  })(); //return json info
+  })();
 
 });
