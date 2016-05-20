@@ -64,7 +64,6 @@ $(document).ready(function(){
 
   // interactions iife
   (function() {
-    console.log(medsByCUI[thisMed]);
     $.ajax({
       url: 'https://rxnav.nlm.nih.gov/REST/interaction/interaction.json?rxcui=' + medsByCUI[thisMed],
       type: 'GET',
@@ -77,7 +76,6 @@ $(document).ready(function(){
 
     function interactionsData(data) {
       var interactArray = data.interactionTypeGroup[0].interactionType[0].interactionPair;
-      console.log(interactArray[1].description);
 
       for (var i = 0; i < interactArray.length; i++) {
         $('.med-adverse-events').append('<div class="adverse-div"><p>' + interactArray[i].description + '</p></div>');
