@@ -138,8 +138,15 @@
   margin-left: 10%;
 }
 
+#mh-map {
+  height: 50px;
+  padding-top: 2%;
+  background-color: #ccffcc;
+}
+
 .outer {
-  margin-top: 2%;
+  background-color: #ccffcc;
+  padding-bottom: 2%;
 }
 
 .clinic-locator {
@@ -148,11 +155,20 @@
 }
 
 .map-submit {
-  width: 150px;
+  width: 280px;
   height: 200px;
-  vertical-align: middle;
+  vertical-align: top;
+  padding-top: 50px;
   margin-left: 50px;
   display: inline-block;
+}
+
+#address {
+  width: 220px;
+}
+
+#submit {
+  margin-left: 55px;
 }
 
 .clinic-results {
