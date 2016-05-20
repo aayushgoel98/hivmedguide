@@ -10,7 +10,11 @@ The descriptive text for each medication is called from the AIDSinfo.nih.gov API
 
 #### Technologies ####
 
-jQuery
-HTML
-CSS
-Ajax
+jQuery  
+HTML  
+CSS  
+Ajax  
+
+#### Implementation ####
+
+The primary challenge for this project was juggling each of the six APIs in a manner that extracted the minimum pertinent information and made it presentable for the user. Some of the APIs have not been updated/maintained in a long time, and one of them returned a 26,000 line JSON (the only response it offered), so I built a parser to cut the data down to a manageable size. 
